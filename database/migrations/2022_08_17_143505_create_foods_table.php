@@ -16,10 +16,11 @@ return new class extends Migration
         Schema::create('foods', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('pricer');
+            $table->integer('price');
             $table->integer('discount');
-            $table->foreignId('category_id')->references('id')->on('categories')->cascadeOnDelete();
-            $table->foreignId('restaurant_id')->constrained()->cascadeOnDelete(); //same above code
+            $table->foreignId('category_id');
+            $table->foreignId('restaurant_id');
+            // $table->foreignId('restaurant_id')->constrained()->cascadeOnDelete(); //same above code
             $table->timestamps();
         });
     }

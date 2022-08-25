@@ -15,6 +15,13 @@ return new class extends Migration
     {
         Schema::create('order_details', function (Blueprint $table) {
             $table->id();
+            $table->string('invoice_no')->unique();
+            $table->integer('quantity');
+            $table->date('date');
+            $table->foreignId('food_id');
+            $table->foreignId('customer_id');
+            $table->string('status');
+            $table->integer('tax');
             $table->timestamps();
         });
     }

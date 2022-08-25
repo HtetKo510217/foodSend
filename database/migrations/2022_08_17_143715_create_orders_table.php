@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
+            $table->string('invoice_no')->unique();
+            $table->integer('total');
             $table->timestamps();
         });
     }
