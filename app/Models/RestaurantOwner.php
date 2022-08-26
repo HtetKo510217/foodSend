@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class RestaurantOwner extends Model
 {
     use HasFactory;
+    protected $guarded = [];
 }

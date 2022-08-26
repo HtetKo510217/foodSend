@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\RestaurantOwnerController;
 use App\Http\Controllers\TownshipController;
 use Illuminate\Support\Facades\Route;
 
@@ -42,6 +43,17 @@ Route::prefix('admin')->group(function(){
         Route::get('/townships/edit/{id}','edit')->name('township_edit');
         Route::post('/townships/update/{id}','update')->name('township_update');
         Route::post('/townships/destory/{id}','destory')->name('township_destory');
+    });
+
+    //RestatrantOwnerController
+
+    Route::controller(RestaurantOwnerController::class)->group(function(){
+        Route::get('/restaurant_owners','show')->name('owner');
+        Route::get('/restaurant_owners/create','create')->name('owner_create');
+        Route::post('/restaurant_owners/store','store')->name('owner_store');
+        Route::get('/restaurant_owners/edit/{id}','edit')->name('restaurant_owners_edit');
+        Route::post('/restaurant_owners/update/{id}','update')->name('restaurant_owners_update');
+        Route::post('/restaurant_owners/destory/{id}','destory')->name('restaurant_owners_destory');
     });
 
 });
