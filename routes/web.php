@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\FoodController;
+use App\Http\Controllers\RestaurantController;
 use App\Http\Controllers\RestaurantOwnerController;
 use App\Http\Controllers\TownshipController;
 use Illuminate\Support\Facades\Route;
@@ -54,6 +56,25 @@ Route::prefix('admin')->group(function(){
         Route::get('/restaurant_owners/edit/{id}','edit')->name('restaurant_owners_edit');
         Route::post('/restaurant_owners/update/{id}','update')->name('restaurant_owners_update');
         Route::post('/restaurant_owners/destory/{id}','destory')->name('restaurant_owners_destory');
+    });
+
+    Route::controller(RestaurantController::class)->group(function(){
+        Route::get('/restaurants','show')->name('restaurants');
+        Route::get('/restaurants/create','create')->name('restaurants_create');
+        Route::post('/restaurants/store','store')->name('restaurants_store');
+        Route::get('/restaurants/edit/{id}','edit')->name('restaurants_edit');
+        Route::patch('/restaurants/update/{id}','update')->name('restaurants_update');
+        Route::post('/restaurants/destory/{id}','destory')->name('restaurants_destory');
+    });
+
+    Route::controller(FoodController::class)->group(function(){
+        Route::get('/foods','show')->name('foods');
+        Route::get('/foods/create','create')->name('foods_create');
+        Route::post('/foods/store','store')->name('foods_store');
+        Route::get('/foods/edit/{id}','edit')->name('foods_edit');
+        Route::patch('/foods/update/{id}','update')->name('foods_update');
+        Route::post('/foods/destory/{id}','destory')->name('foods_destory');
+
     });
 
 });
