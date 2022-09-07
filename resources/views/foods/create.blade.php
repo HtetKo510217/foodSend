@@ -8,6 +8,7 @@
             <x-form-input name="discount" type="number"/>
             <x-form-select name="categories" id="category_id" :collection="$categories"  />
             <x-form-select name="restaurants" id="restaurant_id" :collection="$restaurants" />
+            <x-form-select name="townships" id="township_id" :collection="$townships" />
             <!-- Submit button -->
             <button type="submit" class="btn btn-primary btn-block">Create</button>
             <a href="{{route('foods')}}" class="btn btn-info">Back</a>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Foods;
 use App\Models\Restaurant;
+use App\Models\Township;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
@@ -20,6 +21,7 @@ class FoodController extends Controller
        return view('foods.create',[
         'categories' => Category::all(),
         'restaurants' => Restaurant::all(),
+        'townships' => Township::all(),
        ]);
     }
 
@@ -30,6 +32,7 @@ class FoodController extends Controller
             'discount' => ['required'],
             'category_id' => ['required',Rule::exists('categories','id')],
             'restaurant_id' => ['required',Rule::exists('restaurants','id')],
+            'township_id' => ['required',Rule::exists('townships','id')],
         ]);
         $formData['image'] = request()->file('image')->store('image');
         Foods::create($formData);
@@ -42,6 +45,7 @@ class FoodController extends Controller
             'food' => $food,
             'categories' => Category::all(),
             'restaurants' => Restaurant::all(),
+            'townships' => Township::all(),
         ]);
     }
 

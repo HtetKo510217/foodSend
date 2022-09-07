@@ -18,6 +18,7 @@
              </thead>
              <tbody>
                  @foreach ($restaurants as $restaurant)
+                 {{-- @dd($restaurant->township->name) --}}
                  <tr>
                      <td>
                          {{$id_num}}
@@ -38,7 +39,7 @@
                         {{$restaurant->opening_duration}}
                     </td>
                     <td>
-                        {{$restaurant->township->name}}
+                        {{$restaurant->township->name ?? 'none'}}
                     </td>
                      <td class="d-flex ">
                          <a href="{{route('restaurants')}}/edit/{{$restaurant->id}}" class="btn btn-info ">Edit</a>

@@ -13,6 +13,7 @@
                  <th class="w-25">Discount</th>
                  <th class="w-25">Category</th>
                  <th class="w-25">Restaurant</th>
+                 <th class="w-25">Township</th>
                  <th class="w-25">Actions</th>
                </tr>
              </thead>
@@ -39,6 +40,9 @@
                     </td>
                     <td>
                         {{$food->restaurant->name}}
+                    </td>
+                    <td>
+                        {{$food->township->name}}
                     </td>
                      <td class="d-flex ">
                          <a href="{{route('foods')}}/edit/{{$food->id}}" class="btn btn-info ">Edit</a>

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FoodController;
+use App\Http\Controllers\FrontendViewController;
 use App\Http\Controllers\RestaurantController;
 use App\Http\Controllers\RestaurantOwnerController;
 use App\Http\Controllers\TownshipController;
@@ -18,9 +19,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[FrontendViewController::class,'index']);
 
 
 // admin

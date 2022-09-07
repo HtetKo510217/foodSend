@@ -21,6 +21,7 @@ return new class extends Migration
             $table->integer('discount');
             $table->foreignId('category_id');
             $table->foreignId('restaurant_id');
+            $table->foreignId('township_id');
             // $table->foreignId('restaurant_id')->constrained()->cascadeOnDelete(); //same above code
             $table->timestamps();
         });

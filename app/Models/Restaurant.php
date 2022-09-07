@@ -11,6 +11,6 @@ class Restaurant extends Model
     protected $guarded = [];
 
     public function township() {
-        return $this->belongsTo(Township::class);
+        return $this->belongsTo(Township::class,'township_id');
     }
 }
