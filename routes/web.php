@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FoodController;
 use App\Http\Controllers\FrontendViewController;
@@ -25,7 +26,9 @@ Route::get('/',[FrontendViewController::class,'index']);
 // admin
 
 Route::prefix('admin')->group(function(){
-
+    //AdminController
+    Route::get('/',[AdminController::class,'index']);
+    
     //CategoryController
     Route::controller(CategoryController::class)->group(function(){
         Route::get('/categories','show')->name('category');
