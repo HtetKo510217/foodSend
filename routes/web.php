@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\FoodController;
 use App\Http\Controllers\FrontendViewController;
 use App\Http\Controllers\RestaurantController;
@@ -22,6 +24,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[FrontendViewController::class,'index']);
 
+
+Route::get('/register',[AuthController::class,'create']);
+Route::post('/register',[AuthController::class,'store']);
+
+Route::post('/logout',[AuthController::class,'logout']);
+
+Route::get('/login',[AuthController::class,'login']);
+Route::post('/login',[AuthController::class,'login_store']);
 
 // admin
 
